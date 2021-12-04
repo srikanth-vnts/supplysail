@@ -39,6 +39,8 @@ const ProductHome = () => {
     initialValues,
     onSubmit: handleOnSubmit,
   });
+
+  console.log('formik: ', formik);
   return (
     <div>
       <div className={cx('field')}>
@@ -65,8 +67,9 @@ const ProductHome = () => {
           placeholder={'price'}
         />
       </div>
-      <Button onClick={formik.handleSubmit}>add more Product</Button>
-
+      <Button onClick={formik.handleSubmit} type="primary">
+        add more Product
+      </Button>
       <div>
         {products.map(({ imageUrl, name, price }) => (
           <ProductItem
